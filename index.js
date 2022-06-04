@@ -8,7 +8,24 @@ const dates = [
 ];
 
 // TODO: Buatlah fungsi createDate
-const createDate = null;
+const createDate = (dateList, desiredIndex) => {
+  
+  // Convert to epoch time in second
+  let newDateList = [];
+  for (let item=0; item < dateList.length; item++){
+    let epochTimeSec = (Date.parse(dateList[item]))/1000;
+
+    newDateList.push(epochTimeSec);
+  }
+
+  // Return condition
+  if (desiredIndex >= 0){
+    return newDateList[desiredIndex].toString();
+  }else{
+    return newDateList.sort().join('-');
+  }
+  
+};
 
 // ! JANGAN DIMODIFIKASI
 (() => {
